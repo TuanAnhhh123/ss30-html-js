@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function orderCharacters(inputString) {
+
+        let letters = [];
+        let numbers = [];
+        let specials = [];
+
+        for (let char of inputString) {
+          if (/[a-zA-Z]/.test(char)) {
+            letters.push(char); 
+          } else if (/[0-9]/.test(char)) {
+            numbers.push(char);
+          } else {
+            specials.push(char);
+          }
+        }
+
+        let resultArray = letters.concat(numbers, specials);//concat được sử dụng để nối các mảng lại với nhau
+
+        return resultArray;
+      }
+
+      let userInput = prompt("Nhập vào một chuỗi: ");
+
+      let result = orderCharacters(userInput);
+      console.log("Kết quả:", result);
+    </script>
+  </body>
+</html>

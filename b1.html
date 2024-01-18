@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function reverse_num(n) {
+        n = n.toString(); //chuyển đổi số thành chuỗi
+        return n.split("").reverse().join(""); //phương thức split, reverse, và join trên chuỗi, nhằm đảo ngược thứ tự các ký tự của số
+      }
+
+
+      function symmetrical_num(n) {
+        let flag = 0; //ko là đối xứng
+        if (reverse_num(n) == n) flag = 1; //là đối xứng
+        return flag;
+      }
+
+      let n = prompt(" Nhap so tu nhien ");
+
+      let check = symmetrical_num(n);
+
+      if (check == 1){
+         console.log(n + " la so doi xung");
+        }else{
+         console.log(n + " khong phai la la so doi xung");
+        }
+    </script>
+  </body>
+</html>
